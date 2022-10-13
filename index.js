@@ -529,4 +529,164 @@ console.log(getMultipleLengths(["hello", "what", "is", "up", "dude"])); => [5, 4
 // }
 // console.log(getMultipleLengths(["hello", "what", "is", "up", "dude"]))
 
- 
+
+/*
+G. maxOfThree
+Define a function maxOfThreethat takes three numbers as arguments and returns the largest of them. If all numbers are the same, it doesn't matter which one is returned. If the two largest numbers are the same, one of them should be returned. Be sure to test it with larger values in each of the three locations.
+console.log(maxOfThree(6, 9, 1)); => 9
+
+Did you use Google and find Math.max()? If so, great job! Very resourceful—keep looking stuff up! However, for this particular question, we need you to submit a solution that does not use Math.max().
+*/
+
+// let maxOfThree = (x, y, z) => {
+//   if ((x > y && x > z) || (x === y && x > z)) {
+//     console.log(x)
+//   } else if ((y > x && y > z) || (y === z && y > x)) {
+//     console.log(y)
+//   } else if ((z > x && z > y) || (z === x && z > y)) {
+//     console.log(z)
+//   } else if (x === y && x === y) {
+//     console.log(x)
+//   }
+// }
+
+// maxOfThree(5, 4, 3) //prints: 5
+// maxOfThree(6, 6, 2) //prints: 6
+// maxOfThree(8, 10, 4) //prints: 10
+// maxOfThree(3, 12, 12) //prints: 12
+// maxOfThree(4, 2, 15) //prints: 15
+// maxOfThree(14, 5, 14) //prints: 14
+// maxOfThree(5, 5, 5) //prints: 5
+
+
+/*
+H. printLongestWord
+Write a function printLongestWordthat accepts a single argument, an array of strings. The method should return the longest word in the array. In case of a tie, the method should return the word that appears first in the array.
+console.log(printLongestWord(["BoJack", "Princess", "Diane", "a", "Max", "Peanutbutter", "big", "Todd"])); => "Peanutbutter"
+*/
+
+// let printLongestWord = (arrStr) => {
+//   let base = arrStr[0]
+
+//   for (i = 0; i < arrStr.length; i++) {
+//     if (arrStr[i].length > base.length) {
+//       base = arrStr[i]
+//     }
+//   }
+
+//   console.log(base)
+// }
+// printLongestWord(["BoJack", "Princess", "Diane", "a", "Max", "Peanutbutter", "big", "Todd"])
+
+
+
+/*
+Objects
+Let's set up an object data structure. Let's say we have a website that sells products, and we have a user of our website, and we want to store that user's data. The object data structure is a good way to organize the data from our user.
+*/
+
+
+
+/*
+A. Make a user object
+Create an object called user.
+Write in to the object the key-value pairs for name, email, age, and purchased. Set the value of purchasedto an empty array []. Set the other values to whatever you would like.
+*/
+
+const user = {
+  name: "Jake",
+  email: "jake@gmail.com",
+  age: 32,
+  purchased: []
+}
+console.log(user)
+
+
+
+/*
+B. Update the user
+Our user has changed his or her email address. Without changing the original userobject, update the emailvalue to a new email address.
+Our user has had a birthday! Without changing the original userobject, increment the agevalue using the postfix operator. Hint: age++
+*/
+
+user.email = "jake@yahoo.com"
+user.age++
+console.log(user)
+
+
+
+/*
+C. Adding keys and values
+You have decided to add your user's location to the data that you want to collect.
+Without changing the original user object, add a new key locationto the object, and give it a value or some-or-other location (a string).
+*/
+
+user.location = "America"
+console.log(user)
+
+
+
+/*
+D. Shopaholic!
+Our user has purchased an item! They have purchased some "carbohydrates". Using .push(), add the string "carbohydrates" to the purchasedarray.
+Our user has purchased an item! They have purchased some "peace of mind". Using .push(), add the string "peace of mind" to the purchasedarray.
+Our user has purchased an item! They have purchased some "Merino jodhpurs". Using .push(), add the string "Merino jodhpurs" to the purchasedarray.
+Console.log just the "Merino jodhpurs" from the purchasedarray.
+*/
+
+user.purchased.push("carbohydrates")
+user.purchased.push("peace of mind")
+user.purchased.push("Merino jodhpurs")
+console.log(user)
+console.log(user.purchased[2])
+
+
+
+/*
+E. Object-within-object
+Remember that you can add an object to an existing object in the same way that you can add any new property/value pair.
+If we want to give our user a friendwith a nameand age, we could write:
+user.friend = {
+    name: "Grace Hopper",
+    age: 85
+}
+When we console.log user, we would see the friendobject added to our user object.
+
+Write a friendobject into your userobject and give the friend a name, age, location, and purchased array (empty for now)
+Console.log just the friend's name
+Console.log just the friend's location
+CHANGE the friend's age to 55
+The friendhas purchased "The One Ring". Use .push()to add "The One Ring" to the friend's purchasedarray.
+The friendhas purchased "A latte". Use .push()to add "A latte" to the friend's purchasedarray.
+Console.log just "A latte" from the friend's purchasedarray.
+*/
+
+user.friend = {
+  name: "Grace",
+  age: 28,
+  location: "Italy",
+  purchased: []
+}
+console.log(user.friend.name)
+console.log(user.friend.location)
+user.friend.age = 55
+user.friend.purchased.push("The One Ring")
+user.friend.purchased.push("A latte")
+console.log(user.friend.purchased[1])
+//console.log(user.friend)
+
+
+
+/*
+F. Loops
+Write a for loop that iterates over the User's purchasedarray (NOT the friend's purchased array), and prints each element to the console.
+Write a for loop that iterates over the Friend's purchasedarray, and prints each element to the console.
+*/
+
+for (i = 0; i < user.purchased.length; i++) {
+  console.log(user.purchased[i])
+}
+
+for (i = 0; i < user.friend.purchased.length; i++) {
+  console.log(user.friend.purchased[i])
+}
