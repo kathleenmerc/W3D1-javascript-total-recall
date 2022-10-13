@@ -254,7 +254,6 @@ B. Easy Does It
 
 
 
-
 /*
 C. Accessing elements
 Given the following array const randomThings = [1, 10, "Hello", true]
@@ -402,6 +401,7 @@ const kristynsCloset = [
     ]
   ];
 /*
+
 1. What's Kristyn wearing today? Using bracket notation to access items in kristynsCloset, log the sentence "Kristyn is rocking that " + the third item in Kristyn's closet + " today!" to the console.
 2. Kristyn just bought some sweet shades! Add "raybans"to her closet after "yellow knit hat".
 3. Kristyn spilled coffee on her hat... modify this item to read "stained knit hat"instead of yellow.
@@ -530,6 +530,7 @@ console.log(getMultipleLengths(["hello", "what", "is", "up", "dude"])); => [5, 4
 // console.log(getMultipleLengths(["hello", "what", "is", "up", "dude"]))
 
 
+
 /*
 G. maxOfThree
 Define a function maxOfThreethat takes three numbers as arguments and returns the largest of them. If all numbers are the same, it doesn't matter which one is returned. If the two largest numbers are the same, one of them should be returned. Be sure to test it with larger values in each of the three locations.
@@ -557,6 +558,7 @@ Did you use Google and find Math.max()? If so, great job! Very resourceful—kee
 // maxOfThree(4, 2, 15) //prints: 15
 // maxOfThree(14, 5, 14) //prints: 14
 // maxOfThree(5, 5, 5) //prints: 5
+
 
 
 /*
@@ -690,3 +692,34 @@ for (i = 0; i < user.purchased.length; i++) {
 for (i = 0; i < user.friend.purchased.length; i++) {
   console.log(user.friend.purchased[i])
 }
+
+
+
+/*
+G. Functions can operate on objects
+1. Write a single function updateUserthat takes no parameters. When the function is run, it should:
+2. it should increment the user's age by 1
+3. make the user's name uppercase
+The function does not need a return statement, it will merely modify the user object.
+4. Write a function oldAndLoudthat performs the exact same tasks as updateUser, but instead of hard-coding it to only work on our userobject, make it take a parameter person, and have it modify the object that is passed in as an argument when the function is called. Call your oldAndLoudfunction with useras the argument.
+*/
+console.log(user)
+
+function updateUser () {
+  user.age++;
+  user.name = user.name.toUpperCase();
+}
+
+updateUser(user)
+console.log(user)
+
+
+function oldAndLoud (person) {
+  person = user
+  updateUser(person)
+}
+
+oldAndLoud(user)
+console.log(person)
+
+
