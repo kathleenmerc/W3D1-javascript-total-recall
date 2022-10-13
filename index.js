@@ -529,4 +529,4 @@ console.log(getMultipleLengths(["hello", "what", "is", "up", "dude"])); => [5, 4
 // }
 // console.log(getMultipleLengths(["hello", "what", "is", "up", "dude"]))
 
-
+ 
