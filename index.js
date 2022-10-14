@@ -595,13 +595,13 @@ Create an object called user.
 Write in to the object the key-value pairs for name, email, age, and purchased. Set the value of purchasedto an empty array []. Set the other values to whatever you would like.
 */
 
-const user = {
-  name: "Jake",
-  email: "jake@gmail.com",
-  age: 32,
-  purchased: []
-}
-console.log(user)
+// const user = {
+//   name: "Jake",
+//   email: "jake@gmail.com",
+//   age: 32,
+//   purchased: []
+// }
+// console.log(user)
 
 
 
@@ -611,9 +611,9 @@ Our user has changed his or her email address. Without changing the original use
 Our user has had a birthday! Without changing the original userobject, increment the agevalue using the postfix operator. Hint: age++
 */
 
-user.email = "jake@yahoo.com"
-user.age++
-console.log(user)
+// user.email = "jake@yahoo.com"
+// user.age++
+// console.log(user)
 
 
 
@@ -623,8 +623,8 @@ You have decided to add your user's location to the data that you want to collec
 Without changing the original user object, add a new key locationto the object, and give it a value or some-or-other location (a string).
 */
 
-user.location = "America"
-console.log(user)
+// user.location = "America"
+// console.log(user)
 
 
 
@@ -636,11 +636,11 @@ Our user has purchased an item! They have purchased some "Merino jodhpurs". Usin
 Console.log just the "Merino jodhpurs" from the purchasedarray.
 */
 
-user.purchased.push("carbohydrates")
-user.purchased.push("peace of mind")
-user.purchased.push("Merino jodhpurs")
-console.log(user)
-console.log(user.purchased[2])
+// user.purchased.push("carbohydrates")
+// user.purchased.push("peace of mind")
+// user.purchased.push("Merino jodhpurs")
+// console.log(user)
+// console.log(user.purchased[2])
 
 
 
@@ -663,19 +663,19 @@ The friendhas purchased "A latte". Use .push()to add "A latte" to the friend's p
 Console.log just "A latte" from the friend's purchasedarray.
 */
 
-user.friend = {
-  name: "Grace",
-  age: 28,
-  location: "Italy",
-  purchased: []
-}
-console.log(user.friend.name)
-console.log(user.friend.location)
-user.friend.age = 55
-user.friend.purchased.push("The One Ring")
-user.friend.purchased.push("A latte")
-console.log(user.friend.purchased[1])
-//console.log(user.friend)
+// user.friend = {
+//   name: "Grace",
+//   age: 28,
+//   location: "Italy",
+//   purchased: []
+// }
+// console.log(user.friend.name)
+// console.log(user.friend.location)
+// user.friend.age = 55
+// user.friend.purchased.push("The One Ring")
+// user.friend.purchased.push("A latte")
+// console.log(user.friend.purchased[1])
+// //console.log(user.friend)
 
 
 
@@ -685,13 +685,13 @@ Write a for loop that iterates over the User's purchasedarray (NOT the friend's 
 Write a for loop that iterates over the Friend's purchasedarray, and prints each element to the console.
 */
 
-for (i = 0; i < user.purchased.length; i++) {
-  console.log(user.purchased[i])
-}
+// for (i = 0; i < user.purchased.length; i++) {
+//   console.log(user.purchased[i])
+// }
 
-for (i = 0; i < user.friend.purchased.length; i++) {
-  console.log(user.friend.purchased[i])
-}
+// for (i = 0; i < user.friend.purchased.length; i++) {
+//   console.log(user.friend.purchased[i])
+// }
 
 
 
@@ -703,23 +703,97 @@ G. Functions can operate on objects
 The function does not need a return statement, it will merely modify the user object.
 4. Write a function oldAndLoudthat performs the exact same tasks as updateUser, but instead of hard-coding it to only work on our userobject, make it take a parameter person, and have it modify the object that is passed in as an argument when the function is called. Call your oldAndLoudfunction with useras the argument.
 */
-console.log(user)
+// console.log(user)
 
-function updateUser () {
-  user.age++;
-  user.name = user.name.toUpperCase();
-}
+// function updateUser () {
+//   user.age++;
+//   user.name = user.name.toUpperCase();
+// }
 
-updateUser(user)
-console.log(user)
+// updateUser(user)
+// console.log(user)
+
+// let person = user
+// function oldAndLoud (person) {
+//   updateUser(person)
+// }
+
+// oldAndLoud(user)
+// console.log(person)
 
 
-function oldAndLoud (person) {
-  person = user
-  updateUser(person)
-}
 
-oldAndLoud(user)
-console.log(person)
+/*
+Cat Combinator
+
+1. Mama cat
+Define an object called cat1that contains the following properties:
+name
+breed
+age (a number)
+console.log the cat's age
+console.log the cat's breed
+
+2. Papa cat
+Define an object called cat2that also contains the properties:
+name
+breed
+age (a number)
+*/
+
+// //1.
+// const cat1 = {
+//   name: "Peggy",
+//   breed: "Persian",
+//   age: 5
+// }
+// console.log(cat1.age)
+// console.log(cat1.breed)
+
+// //2.
+// const cat2 = {
+//   name: "Patrick",
+//   breed: "Burmese",
+//   age: 8
+// }
 
 
+/*
+3. Combine Cats!
+The cats are multiplying!
+Write a function combineCatsthat has two parameters mama, and papa. The function will take two arguments -- each a cat object.
+Pass cat1and cat2as arguments to the combineCatsfunction. The function should console.log them.
+Example:
+combineCats(cat1, cat2)
+{ name: "Joe", age: 19, breed: "Mog" }
+{ name: "Jam", age: 45, breed: "Siamese" }
+This is to demonstrate that functions can take objects as arguments
+You could also invoke the combineCatsfunction by writing the objects straight into the parentheses:
+combineCats({ name: "Craig", age: 20, breed: "unknown" }, { name: "Linda", age: 20, breed: "undefined" })
+Make it so the combineCats function will return a combination of the two incoming cats.
+The result should be an object wherein the:
+name is a concatenation of the parents' names,
+the age is 1,
+the breed is each of the parents' breeds with a hyphen in between.
+This is to demonstrate that a function can return an object.
+
+4. Cat brain bender
+If combineCatsreturns an object, and if combineCatstakes objects as arguments, then it stands to reason that:
+catCombinatorcan use itself as its own argument.
+Take a second to stew on that . . .
+What is the result of:
+console.log(combineCats(combineCats(cat1, cat2), combineCats(cat1, cat2)));
+Whoa ...
+The above console.log is two levels deep of combineCats.
+Write a console.log that is three levels deep of combineCats. combineCats should have two arguments, each which are combineCats, each which have two arguments, each which are combineCats.
+Your output should look something like:
+*/
+
+// //3.
+// function combineCats (mama, papa) {
+//   return {name: `${mama.name}${papa.name}`, age: 1, breed: `${mama.breed}-${papa.breed}`}
+// }
+// console.log(combineCats(cat1,cat2))
+
+// //4.
+// console.log(combineCats(combineCats(combineCats(cat1,cat2),combineCats(cat1,cat2)),combineCats(combineCats(cat1,cat2),combineCats(cat1,cat2))))
